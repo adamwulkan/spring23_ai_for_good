@@ -1,4 +1,4 @@
-url ='https://docs.google.com/spreadsheets/d/e/2PACX-1vRWSIvVM7Nk-NsF2XSqibHxzypZkhP9nf9DFnSmQX9PJXzZfMpMLqqKvO70NqiA7mstFTXvpwXdWrrX/pub?output=csv'
+url ='https://raw.githubusercontent.com/adamwulkan/spring23_ai_for_good/main/pima_midterm1%20-%20pima_midterm1.csv'
 pima_table = up_get_table(url)
 pima_table
 
