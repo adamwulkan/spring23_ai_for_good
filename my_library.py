@@ -83,3 +83,26 @@ def try_archs(full_table, target, architectures, thresholds):
   return None
   #return your 2 results in a list
   return [neg, pos]
+
+url ='https://raw.githubusercontent.com/adamwulkan/spring23_ai_for_good/main/pima_midterm1%20-%20pima_midterm1.csv'
+pima_table = up_get_table(url)
+pima_table
+
+#your wrangling code here
+pima_table = up_drop_column(pima_table, 'Insulin')
+pima_table = up_drop_nan_rows(pima_table)
+
+BP_dict = {'low':0, 'medium':1, 'high':2}
+pima_table = up_map_column(pima_table, 'BloodPressure', BP_dict)
+
+Reg_dict = {'A':0, 'B':1, 'C':2, 'D':3}
+pima_table = up_map_column(pima_table, 'Region', Reg_dict)
+
+pima_table = up_apply_3sigma(pima_table, 'Pregnancies')
+pima_table = up_apply_3sigma(pima_table, 'Glucose')
+pima_table = up_apply_3sigma(pima_table, 'SkinThickness')
+pima_table = up_apply_3sigma(pima_table, 'BMI')
+pima_table = up_apply_3sigma(pima_table, 'DiabetesPedigreeFunction')
+pima_table = up_apply_3sigma(pima_table, 'Age')
+
+pima_table
