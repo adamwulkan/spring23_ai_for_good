@@ -18,3 +18,5 @@ pima_table = up_apply_3sigma(pima_table, 'SkinThickness')
 pima_table = up_apply_3sigma(pima_table, 'BMI')
 pima_table = up_apply_3sigma(pima_table, 'DiabetesPedigreeFunction')
 pima_table = up_apply_3sigma(pima_table, 'Age')
+
+pima_table
