@@ -60,7 +60,7 @@ def metrics (your_pred_act_list):
   accuracy = (tp+tn)/(tp+fp+fn+tn) if tp+fp+fn+tn !=0 else 0
 
 
-  return {'Precision': precision, 'Recall': recall, 'F1':f1, 'Accuracy':accuracy}
+return {'Precision': precision, 'Recall': recall, 'F1':f1, 'Accuracy':accuracy}
 
 def try_archs(full_table, target, architectures, thresholds):
   train_table, test_table = up_train_test_split(full_table, target, .4)
