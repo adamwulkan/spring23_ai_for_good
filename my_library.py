@@ -40,12 +40,9 @@ def naive_bayes(table, evidence_row, target):
 def metrics (your_pred_act_list):
   assert isinstance(your_pred_act_list, list), "Parameter must be a list."
 
-
   assert all(isinstance(pair, list) for pair in your_pred_act_list), "Parameter must be a list of lists."
 
-    
   assert all(len(pair) == 2 for pair in your_pred_act_list), "Each value in the list must be a pair of items."
-
     
   assert all(isinstance(item, (int, float)) and item >= 0 for pair in your_pred_act_list for item in pair), "Each value in the pair must be an integer >= 0."
 
@@ -58,9 +55,8 @@ def metrics (your_pred_act_list):
   recall = tp / (tp + fn) if tp + fn !=0 else 0
   f1 = 2 * ((precision*recall)/(precision+recall)) if precision+recall !=0 else 0
   accuracy = (tp+tn)/(tp+fp+fn+tn) if tp+fp+fn+tn !=0 else 0
-
-
-return {'Precision': precision, 'Recall': recall, 'F1':f1, 'Accuracy':accuracy}
+  
+  return {'Precision': precision, 'Recall': recall, 'F1':f1, 'Accuracy':accuracy}
 
 def try_archs(full_table, target, architectures, thresholds):
   train_table, test_table = up_train_test_split(full_table, target, .4)
