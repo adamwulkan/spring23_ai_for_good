@@ -76,3 +76,7 @@ def metrics (your_pred_act_list):
   accuracy = (tp+tn)/(tp+fp+fn+tn) if tp+fp+fn+tn !=0 else 0
   
   return {'Precision': precision, 'Recall': recall, 'F1':f1, 'Accuracy':accuracy}
+
+
+k_actuals = up_get_column (test, target)
+pos_probs = [p for n,p in probs]
